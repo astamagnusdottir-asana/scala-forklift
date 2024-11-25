@@ -1,7 +1,7 @@
 val repoKind = SettingKey[String]("repo-kind",
   "Maven repository kind (\"snapshots\" or \"releases\")")
 
-lazy val slickVersion = "3.5.2"
+lazy val slickVersion = "3.4.1"
 
 lazy val scala212 = "2.12.11"
 lazy val scala213 = "2.13.8"
@@ -21,7 +21,7 @@ lazy val slickDependencies = List(
 )
 
 lazy val slickDependenciesWithTests = slickDependencies ++ List(
-  "org.scalatest" %% "scalatest" % "3.2.12",
+  "org.scalatest" %% "scalatest" % "3.0.9",
   "com.lihaoyi" %% "ammonite-ops" % "2.4.1",
   "commons-io" % "commons-io" % "2.6",
   "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
