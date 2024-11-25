@@ -14,7 +14,7 @@ jobs:
           POSTGRES_USER: circleci
           POSTGRES_DB: circle_test
     environment:
-      SBT_VERSION: 1.3.7
+      SBT_VERSION: 1.10.3
     steps:
       - run: echo 'export ARTIFACT_BUILD=$CIRCLE_PROJECT_REPONAME-$CIRCLE_BUILD_NUM.zip' >> $BASH_ENV
       - run:
