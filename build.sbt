@@ -44,7 +44,7 @@ lazy val commonSettings = Seq(
   scalacOptions += "-feature",
   resolvers ++= Seq(Resolver.jcenterRepo, "asana-oss-cache" at "https://asana-oss-cache.s3.us-east-1.amazonaws.com/maven/release/"),
   publishMavenStyle := true,
-  publishArtifact in Test := false,
+  Test / publishArtifact := false,
   repoKind := { if (version.value.trim.endsWith("SNAPSHOT")) "snapshots"
   else "releases" },
   publishTo := { repoKind.value match {
