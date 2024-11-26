@@ -4,7 +4,7 @@ val repoKind = SettingKey[String]("repo-kind",
 lazy val slickVersion = "3.5.2"
 
 lazy val scala212 = "2.12.11"
-lazy val scala213 = "2.13.8"
+lazy val scala213 = "2.13.14"
 lazy val supportedScalaVersions = List(scala212, scala213)
 
 lazy val coreDependencies = libraryDependencies ++= List(
