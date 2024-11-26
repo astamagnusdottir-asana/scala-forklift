@@ -30,7 +30,7 @@ lazy val slickDependenciesWithTests = slickDependencies ++ List(
   "mysql" % "mysql-connector-java" % "8.0.30",
   "org.postgresql" % "postgresql" % "42.5.0",
   "org.hsqldb" % "hsqldb" % "2.7.0",
-  "org.apache.derby" % "derby" % "10.15.2.0",
+  "org.apache.derby" % "derby" % "10.17.1.0",
   "ch.qos.logback" % "logback-classic" % "1.2.11"
 ).map(_ % "test")
 
