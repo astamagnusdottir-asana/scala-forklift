@@ -26,7 +26,7 @@ jobs:
                     pip3 install awscli
                     sudo apt-get clean && sudo apt-get autoclean
       - run:
-          name: Get sbt binary
+          name: Setup sbt
           command: |
                     cd ..
                     curl -L -o sbt-$SBT_VERSION.tgz https://github.com/sbt/sbt/releases/download/v$SBT_VERSION/sbt-$SBT_VERSION.tgz
@@ -35,7 +35,6 @@ jobs:
                     sudo chmod +x sbt
                     export PATH=$PATH:$(pwd)
                     cd ~/scala-forklift
-      - run: ls ~/scala-forklift
       - checkout
       - restore_cache:
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
