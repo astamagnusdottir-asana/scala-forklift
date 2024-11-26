@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/scala-forklift
     docker:
-      - image: cimg/openjdk:11
+      - image: cimg/openjdk:11.0.25
       - image: cimg/mysql:8.0
         environment:
           MYSQL_DATABASE: circle_test

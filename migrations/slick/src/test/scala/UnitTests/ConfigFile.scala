@@ -33,7 +33,7 @@ trait ConfigFile {
 
   protected def migrationsMap = {
     val tmpDir = tmp.dir()
-    val handled = tmpDir/'main/'scala
+    val handled = tmpDir/Symbol("main/scala")
     mkdir! handled
     val migrationsMap = new HashMap[String, Object]
     migrationsMap.put("slick", slickMap)

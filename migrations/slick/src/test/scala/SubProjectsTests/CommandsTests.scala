@@ -12,7 +12,7 @@ class CommandsTest extends FlatSpec
   val dir = TestDir.createTestDir(wd)
   val testDir = dir.testPath
 
-  implicit def pathToString(path: Path) = path.toString
+  implicit def pathToString(path: Path): String = path.toString
 
   val unhandled = testDir/Symbol("migrations/src_migrations/main/scala")
   val handled = testDir/Symbol("migrations/src/main/scala/migrations")
@@ -63,7 +63,7 @@ class CommandsTest extends FlatSpec
     %sbt("mg init", "mg update", "mg apply")
     %sbt("mg codegen", "mg update", "mg apply")
     val file = new File(
-      testDir/'generated_code/'src/'main/'scala/'datamodel/'v1/'schema/"schema.scala")
+      testDir/Symbol("generated_code/src/main/scala/datamodel/v1/schema/schema.scala")
     assert(file.exists)
   }
 
