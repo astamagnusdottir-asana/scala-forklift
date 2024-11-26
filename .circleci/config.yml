@@ -25,9 +25,9 @@ jobs:
                     tar -xvf sbt-$SBT_VERSION.tgz
                     cd sbt/bin
                     sudo chmod +x sbt
-                    ./sbt
+                    export PATH=$PATH:$(pwd)
                     sudo apt-get update
-                    sudo apt-get install -y sbt python-pip git
+                    sudo apt-get install -y python-pip git
                     pip install awscli
                     sudo apt-get clean && sudo apt-get autoclean
       - checkout
