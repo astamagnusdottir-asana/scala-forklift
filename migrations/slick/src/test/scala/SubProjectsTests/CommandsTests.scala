@@ -63,7 +63,7 @@ class CommandsTest extends FlatSpec
     %sbt("mg init", "mg update", "mg apply")
     %sbt("mg codegen", "mg update", "mg apply")
     val file = new File(
-      testDir/Symbol("generated_code/src/main/scala/datamodel/v1/schema/schema.scala")
+      testDir/Symbol("generated_code/src/main/scala/datamodel/v1/schema/schema.scala"))
     assert(file.exists)
   }
 
