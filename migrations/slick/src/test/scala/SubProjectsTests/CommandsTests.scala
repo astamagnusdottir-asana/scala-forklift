@@ -14,8 +14,8 @@ class CommandsTest extends FlatSpec
 
   implicit def pathToString(path: Path) = path.toString
 
-  val unhandled = testDir/'migrations/'src_migrations/'main/'scala
-  val handled = testDir/'migrations/'src/'main/'scala/'migrations
+  val unhandled = testDir/Symbol("migrations/src_migrations/main/scala")
+  val handled = testDir/Symbol("migrations/src/main/scala/migrations")
 
   before {
     dir.setup()
