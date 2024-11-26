@@ -1,7 +1,7 @@
 val repoKind = SettingKey[String]("repo-kind",
   "Maven repository kind (\"snapshots\" or \"releases\")")
 
-lazy val slickVersion = "3.4.1"
+lazy val slickVersion = "3.5.2"
 
 lazy val scala212 = "2.12.11"
 lazy val scala213 = "2.13.8"
