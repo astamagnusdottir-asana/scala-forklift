@@ -25,7 +25,7 @@ lazy val slickDependenciesWithTests = slickDependencies ++ List(
   "com.lihaoyi" %% "ammonite-ops" % "2.4.1",
   "commons-io" % "commons-io" % "2.6",
   "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
-  "com.h2database" % "h2" % "2.1.214",
+  "com.h2database" % "h2" % "2.3.232",
   "com.zaxxer" % "HikariCP" % "6.2.1",
   "org.xerial" % "sqlite-jdbc" % "3.47.1.0",// 3.30.1 crashes SQLiteCommandTests
   "mysql" % "mysql-connector-java" % "8.0.30",
