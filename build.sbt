@@ -9,7 +9,7 @@ lazy val supportedScalaVersions = List(scala212, scala213)
 
 lazy val coreDependencies = libraryDependencies ++= List(
   "org.scala-lang" % "scala-compiler" % scalaVersion.value,
-  "com.typesafe" % "config" % "1.4.2",
+  "com.typesafe" % "config" % "1.4.3",
   "org.eclipse.jgit" % "org.eclipse.jgit" % "4.0.1.201506240215-r"
 )
 
@@ -26,7 +26,8 @@ lazy val slickDependenciesWithTests = slickDependencies ++ List(
   "commons-io" % "commons-io" % "2.6",
   "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
   "com.h2database" % "h2" % "2.1.214",
-  "org.xerial" % "sqlite-jdbc" % "3.8.11.2",// 3.30.1 crashes SQLiteCommandTests
+  "com.zaxxer" % "HikariCP" % "6.2.1",
+  "org.xerial" % "sqlite-jdbc" % "3.47.1.0",// 3.30.1 crashes SQLiteCommandTests
   "mysql" % "mysql-connector-java" % "8.0.30",
   "org.postgresql" % "postgresql" % "42.5.0",
   "org.hsqldb" % "hsqldb" % "2.7.0",
