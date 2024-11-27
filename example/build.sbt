@@ -20,7 +20,7 @@ lazy val commonSettings = Seq(
 )
 
 lazy val loggingDependencies = List(
-  "org.slf4j" % "slf4j-nop" % "1.6.4" // <- disables logging
+  "org.slf4j" % "slf4j-nop" % "2.0.16" // <- disables logging
 )
 
 lazy val slickDependencies = List(
