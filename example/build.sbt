@@ -7,12 +7,12 @@ addCommandAlias("mg", "migrations/run")
 
 lazy val slickVersion = "3.5.2"
 
-lazy val forkliftVersion = "0.3.2"
+lazy val forkliftVersion = "0.3.3-SNAPSHOT"
 
 lazy val commonSettings = Seq(
   organization := "com.liyaos",
   version := "2.0",
-  scalaVersion := "2.13.1",
+  scalaVersion := "2.13.14",
   scalacOptions += "-deprecation",
   scalacOptions += "-feature",
   resolvers ++= Resolver.sonatypeOssRepos("snapshots"),
