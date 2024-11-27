@@ -15,7 +15,7 @@ lazy val commonSettings = Seq(
   scalaVersion := "2.13.1",
   scalacOptions += "-deprecation",
   scalacOptions += "-feature",
-  resolvers += Resolver.Resolver.sonatypeOssRepos("snapshots"),
+  resolvers += Resolver.sonatypeOssRepos("snapshots"),
   resolvers += Resolver.jcenterRepo,
 
 )

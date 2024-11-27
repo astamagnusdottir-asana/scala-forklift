@@ -10,7 +10,7 @@ import slick.jdbc.JdbcProfile
 trait ConfigFile {
   this: Tables =>
   val path = System.getProperty("user.dir")
-  val timeout = new Integer(5000)
+  val timeout = Integer.valueOf(5000)
   val driver: String
   val dbDriver: String
   val dbUrl: String
@@ -118,7 +118,7 @@ trait DerbyConfigFile extends ConfigFile with Tables {
   val driver = "slick.jdbc.DerbyProfile$"
   val dbDriver = "org.apache.derby.jdbc.EmbeddedDriver"
   val dbUrl = s"jdbc:derby:$path/target/test-${Instant.now.toEpochMilli}.derby.db;create=true"
-  override val timeout = new Integer(10000)
+  override val timeout = Integer.valueOf(10000)
 
   val profile = slick.jdbc.DerbyProfile
 }
