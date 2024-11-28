@@ -1,3 +1,5 @@
+import sbtrelease.ReleasePlugin.autoImport._
+
 val repoKind = SettingKey[String]("repo-kind",
   "Maven repository kind (\"snapshots\" or \"releases\")")
 
@@ -45,7 +47,6 @@ lazy val commonSettings = Seq(
   resolvers ++= Seq(Resolver.jcenterRepo, "asana-oss-cache" at "https://asana-oss-cache.s3.us-east-1.amazonaws.com/maven/release/"),
   publishMavenStyle := true,
   Test / publishArtifact := false,
-  releaseIgnoreUntrackedFiles := true,
   repoKind := { if (version.value.trim.endsWith("SNAPSHOT")) "snapshots"
   else "releases" },
   publishTo := Some(Resolver.file("local-ivy", new File(Path.userHome.absolutePath + "/.ivy2/local"))(Resolver.ivyStylePatterns)),
@@ -69,6 +70,7 @@ Test / testOptions += Tests.Setup(() => System.setSecurityManager(null))
 
 lazy val root = Project(
   "scala-forklift", file(".")).settings(
+  releaseIgnoreUntrackedFiles := true,
   crossScalaVersions := Nil,
   publishArtifact := false).aggregate(
   coreProject, slickMigrationProject, plainMigrationProject, gitToolProject)
