@@ -47,12 +47,7 @@ lazy val commonSettings = Seq(
   Test / publishArtifact := false,
   repoKind := { if (version.value.trim.endsWith("SNAPSHOT")) "snapshots"
   else "releases" },
-  publishTo := { repoKind.value match {
-    case "snapshots" => Some("snapshots" at
-      "https://oss.sonatype.org/content/repositories/snapshots")
-    case "releases" =>  Some("releases"  at
-      "https://oss.sonatype.org/service/local/staging/deploy/maven2")
-  }},
+  publishTo := Some(Resolver.file("local-ivy", new File(Path.userHome.absolutePath + "/.ivy2/local"))(Resolver.ivyStylePatterns)),
   credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
   pomExtra := (
     <scm>
