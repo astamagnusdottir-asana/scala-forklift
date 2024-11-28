@@ -71,6 +71,7 @@ Test / testOptions += Tests.Setup(() => System.setSecurityManager(null))
 lazy val root = Project(
   "scala-forklift", file(".")).settings(
   releaseIgnoreUntrackedFiles := true,
+  publishTo := Some(Resolver.file("local-ivy", new File(Path.userHome.absolutePath + "/.ivy2/local"))(Resolver.ivyStylePatterns)),
   crossScalaVersions := Nil,
   publishArtifact := false).aggregate(
   coreProject, slickMigrationProject, plainMigrationProject, gitToolProject)
