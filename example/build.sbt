@@ -16,7 +16,7 @@ lazy val commonSettings = Seq(
   scalacOptions += "-deprecation",
   scalacOptions += "-feature",
   resolvers ++= Resolver.sonatypeOssRepos("snapshots"),
-  resolvers ++= Seq(Resolver.jcenterRepo, "asana-oss-cache" at "https://asana-oss-cache.s3.us-east-1.amazonaws.com/maven/release/"),
+  resolvers += Resolver.jcenterRepo,
 )
 
 lazy val loggingDependencies = List(
