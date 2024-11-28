@@ -45,6 +45,7 @@ lazy val commonSettings = Seq(
   resolvers ++= Seq(Resolver.jcenterRepo, "asana-oss-cache" at "https://asana-oss-cache.s3.us-east-1.amazonaws.com/maven/release/"),
   publishMavenStyle := true,
   Test / publishArtifact := false,
+  releaseIgnoreUntrackedFiles := true,
   repoKind := { if (version.value.trim.endsWith("SNAPSHOT")) "snapshots"
   else "releases" },
   publishTo := Some(Resolver.file("local-ivy", new File(Path.userHome.absolutePath + "/.ivy2/local"))(Resolver.ivyStylePatterns)),
