@@ -59,7 +59,7 @@ lazy val commonSettings = Seq(
   Test / publishArtifact := false,
   repoKind := { if (version.value.trim.endsWith("SNAPSHOT")) "snapshots"
   else "releases" },
-  publishTo := Some(Resolver.file("local-ivy", new File(Path.userHome.absolutePath + "/.ivy2/local"))(Resolver.ivyStylePatterns)),
+  publishTo := Some(Resolver.file("local-ivy", new File(Path.userHome.absolutePath + "local-scala-forklift/"))(Resolver.ivyStylePatterns)),
   credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
   pomExtra := (
     <scm>
