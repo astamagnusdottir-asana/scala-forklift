@@ -51,7 +51,7 @@ lazy val commonSettings = Seq(
   licenses := Seq("Apache 2.0" ->
     url("https://github.com/lastland/scala-forklift/blob/master/LICENSE")),
   homepage := Some(url("https://github.com/lastland/scala-forklift")),
-  scalaVersion := Seq(scala212, scala213),
+  scalaVersion := scala213,
   scalacOptions += "-deprecation",
   scalacOptions += "-feature",
   resolvers ++= Seq(Resolver.jcenterRepo, "asana-oss-cache" at "https://asana-oss-cache.s3.us-east-1.amazonaws.com/maven/release/"),
@@ -83,7 +83,7 @@ lazy val root = Project(
   releaseIgnoreUntrackedFiles := true,
   publishTo := Some(Resolver.file("local-ivy", new File(Path.userHome.absolutePath + "/.ivy/local/"))(Resolver.ivyStylePatterns)),
   publishMavenStyle := true,
-  crossScalaVersions := Nil,
+  crossScalaVersions := Seq(scala212, scala213),
   publishArtifact := false).aggregate(
   coreProject, slickMigrationProject, plainMigrationProject, gitToolProject)
 
